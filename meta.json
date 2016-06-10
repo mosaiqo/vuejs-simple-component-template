@@ -1,0 +1,82 @@
+{
+  "prompts": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "message": "Component name"
+    },
+    "description": {
+      "type": "string",
+      "required": false,
+      "message": "Component description",
+      "default": "A Vue.js component"
+    },
+    "author": {
+      "type": "string",
+      "message": "Author"
+    },
+    "jspreprocesor": {
+      "type": "confirm",
+      "message": "Do you want some Script PreProcessor?",
+      "default": false
+    },
+    "scripts": {
+      "when": "jspreprocesor",
+      "type": "list",
+      "required": true,
+      "choices": [
+        {
+          "name": "JS",
+          "value": "js",
+          "short": "JS"
+        },
+        {
+          "name": "Coffee Script",
+          "value": "coffee",
+          "short": "Coffe"
+        }
+      ]
+    },
+    "stylepreprocesor": {
+      "type": "confirm",
+      "message": "Do you want some Style PreProcessor?",
+      "default": false
+    },
+    "styles": {
+      "when": "stylepreprocesor",
+      "type": "list",
+      "required": true,
+      "choices": [
+        {
+          "name": "CSS",
+          "value": "css",
+          "short": "CSS"
+        },
+        {
+          "name": "LESS",
+          "value": "less",
+          "short": "LESS"
+        },
+        {
+          "name": "SASS",
+          "value": "sass",
+          "short": "Sass"
+        },
+        {
+          "name": "STYLUS",
+          "value": "styl",
+          "short": "Stylus"
+        }
+      ]
+    }
+  },
+  "filters": {
+    "styles.styl": "stylepreprocesor && styles === 'styl'",
+    "styles.sass": "stylepreprocesor && styles === 'sass'",
+    "styles.less": "stylepreprocesor && styles === 'less'",
+    "styles.css": "!stylepreprocesor",
+    "index.coffee": "jspreprocesor && scripts === 'coffee'",
+    "index.js": "!jspreprocesor"
+  },
+  "completeMessage": "Done!!!"
+}

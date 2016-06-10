@@ -1,0 +1,8 @@
+{
+  "name": "{{ name }}",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
+  {{#private}}
+  "private": true,
+  {{/private}}
+}
