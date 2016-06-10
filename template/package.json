@@ -5,4 +5,5 @@
   {{#private}}
   "private": true,
   {{/private}}
+  "main": "Component.vue"
 }
