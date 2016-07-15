@@ -20,7 +20,7 @@
       "message": "Do you want some Script PreProcessor?",
       "default": false
     },
-    "scripts": {
+    "script": {
       "when": "jspreprocesor",
       "type": "list",
       "required": true,
@@ -42,7 +42,7 @@
       "message": "Do you want some Style PreProcessor?",
       "default": false
     },
-    "styles": {
+    "style": {
       "when": "stylepreprocesor",
       "type": "list",
       "required": true,
@@ -71,12 +71,12 @@
     }
   },
   "filters": {
-    "styles.styl": "stylepreprocesor && styles === 'styl'",
-    "styles.sass": "stylepreprocesor && styles === 'sass'",
-    "styles.less": "stylepreprocesor && styles === 'less'",
-    "styles.css": "!stylepreprocesor || (stylepreprocesor && styles === 'css')",
-    "index.js": "!jspreprocesor || (jspreprocesor && scripts === 'js')",
-    "index.coffee": "jspreprocesor && scripts === 'coffee'"
+    "styles.styl": "stylepreprocesor && style === 'styl'",
+    "styles.sass": "stylepreprocesor && style === 'sass'",
+    "styles.less": "stylepreprocesor && style === 'less'",
+    "styles.css": "!stylepreprocesor || (stylepreprocesor && style === 'css')",
+    "index.js": "!jspreprocesor || (jspreprocesor && script === 'js')",
+    "index.coffee": "jspreprocesor && script === 'coffee'"
   },
   "completeMessage": "Done!!!"
 }
