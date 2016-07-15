@@ -24,7 +24,6 @@
       "when": "jspreprocesor",
       "type": "list",
       "required": true,
-      "default": "js",
       "choices": [
         {
           "name": "JS",
@@ -47,7 +46,6 @@
       "when": "stylepreprocesor",
       "type": "list",
       "required": true,
-      "default": "css",
       "choices": [
         {
           "name": "CSS",
@@ -76,11 +74,9 @@
     "styles.styl": "stylepreprocesor && styles === 'styl'",
     "styles.sass": "stylepreprocesor && styles === 'sass'",
     "styles.less": "stylepreprocesor && styles === 'less'",
-    "styles.css": "stylepreprocesor && styles === 'css'",
-    "styles.css": "!stylepreprocesor",
-    "index.js": "jspreprocesor && scripts === 'js'",
+    "styles.css": "(stylepreprocesor && styles === 'css') || !stylepreprocesor",
+    "index.js": "(jspreprocesor && scripts === 'js') || !jspreprocesor",
     "index.coffee": "jspreprocesor && scripts === 'coffee'",
-    "index.js": "!jspreprocesor"
   },
   "completeMessage": "Done!!!"
 }
