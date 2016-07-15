@@ -75,7 +75,7 @@
     "styles.sass": "stylepreprocesor && styles === 'sass'",
     "styles.less": "stylepreprocesor && styles === 'less'",
     "styles.css": "!stylepreprocesor || stylepreprocesor && styles === 'css'",
-    "index.js": "(jspreprocesor && scripts === 'js') || !jspreprocesor",
+    "index.js": "!jspreprocesor || jspreprocesor && scripts === 'js'",
     "index.coffee": "jspreprocesor && scripts === 'coffee'"
   },
   "completeMessage": "Done!!!"
