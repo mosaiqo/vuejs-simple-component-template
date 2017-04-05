@@ -78,13 +78,13 @@ module.exports = {
     "index.js": "!jspreprocesor || (jspreprocesor && script === 'js')",
     "index.coffee": "jspreprocesor && script === 'coffee'"
   },
-  complete(data, {files})
+  complete(data, {logger, files})
   {
-    console.log(data)
-    console.log(files)
+    logger.log(data)
+    logger.log(files)
 
     if (!data.inPlace) {
-      console.log(`cd ${data.destDirName}`)
+      logger.log(`cd ${data.destDirName}`)
     }
   }
 
