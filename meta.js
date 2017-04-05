@@ -1,4 +1,4 @@
-{
+module.exports = {
   "prompts": {
     "name": {
       "type": "string",
@@ -78,5 +78,14 @@
     "index.js": "!jspreprocesor || (jspreprocesor && script === 'js')",
     "index.coffee": "jspreprocesor && script === 'coffee'"
   },
-  "completeMessage": "Done!!!"
+  complete(data, {files})
+  {
+    console.log(data)
+    console.log(files)
+
+    if (!data.inPlace) {
+      console.log(`cd ${data.destDirName}`)
+    }
+  }
+
 }
