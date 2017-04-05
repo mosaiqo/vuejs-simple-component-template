@@ -81,11 +81,12 @@ module.exports = {
   complete(data, {logger, files})
   {
     logger.log(data)
+    console.log(data)
     logger.log(files)
+    console.log(files)
 
     if (!data.inPlace) {
       logger.log(`cd ${data.destDirName}`)
     }
   }
-
 }
